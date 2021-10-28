@@ -8,7 +8,7 @@ const isFormOne = require('./isFormOne.js')
 // let results = []
 
 const app = express()
-const port = 8080
+const port = process.env.PORT || 8080
 
 
 app.use(express.json())
@@ -63,6 +63,19 @@ app.post('/upload', (req, res) => {
         })
     })
 })
+
+
+
+
+if (process.env.NODE_ENV === 'production') {
+    const path = require('path')
+    app.use(express.static(path.join(__dirname, 'build')));
+  
+    app.get('/*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    });
+}
+
 
 
 // app.get('/api/results', (req, res) => {
