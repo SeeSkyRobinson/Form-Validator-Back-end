@@ -14,9 +14,11 @@ const port = process.env.PORT || 8080
 app.use(express.json())
 app.use(fileUpload())
 
-app.get('/', (req, res) => {
-    res.json({ message: 'welcome to the final project'})
-})
+
+
+// app.get('/', (req, res) => {
+//     res.json({ message: 'welcome to the final project'})
+// })
 
 
 // app.post('/upload', (req, res) => {
