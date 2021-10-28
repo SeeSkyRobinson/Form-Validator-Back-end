@@ -30,11 +30,11 @@ function checkDate(date) {
     if (date.day === '' && date.month === '' && date.year === '') {
         // console.log(date);
         // console.log('date empty');
-        return 'date empty'
+        return `${date.day}/${date.month}/${date.year} date empty`
     } else if (date.day === '' || date.month === '' || date.year === '') {
         // console.log(date);
         // console.log('invalid date - date cannot have a blank field');
-        return 'invalid date - date cannot have a blank field'
+        return `${date.day}/${date.month}/${date.year} invalid date - date cannot have a blank field`
     } else {
         if (Math.sign(Number(date.day)) === 1 && Math.sign(Number(date.month)) === 1 && Math.sign(Number(date.year)) === 1) {
             let currentDate = new Date()
@@ -44,18 +44,18 @@ function checkDate(date) {
                 //valid date
                 // console.log(date);
                 // console.log('valid date');
-                return 'valid date'
+                return `${date.day}/${date.month}/${date.year} valid date`
             } else {
                 //invalide date - date cannot be in the future
                 // console.log(date);
                 // console.log('invalide date - date cannot be in the future');
-                return 'invalide date - date cannot be in the future'
+                return `${date.day}/${date.month}/${date.year} invalide date - date cannot be in the future`
             }
         } else {
             //invalide date - date needs to be a number 
             // console.log(date);
             // console.log('invalide date - date needs to be a number');
-            return 'invalide date - date needs to be a number'
+            return `${date.day}/${date.month}/${date.year} invalide date - date needs to be a number`
         }
     }
 }
